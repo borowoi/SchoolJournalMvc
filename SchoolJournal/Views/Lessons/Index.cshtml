@@ -1,0 +1,37 @@
+@model ListViewModel<LessonRowViewModel>
+@{
+    ViewData["Title"] = "Уроки";
+}
+
+<h2>Уроки</h2>
+<p class="text-muted">Показано записей: @Model.Items.Count из @Model.TotalCount (сначала самые поздние по дате).</p>
+
+<table class="table table-striped table-hover table-sm">
+    <thead class="table-light">
+        <tr>
+            <th>Код</th>
+            <th>Дата</th>
+            <th>№ урока</th>
+            <th>Класс</th>
+            <th>Учебный год</th>
+            <th>Предмет</th>
+            <th>Учитель</th>
+            <th>Тема</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var l in Model.Items)
+        {
+            <tr>
+                <td>@l.LessonID</td>
+                <td>@l.LessonDate.ToString("dd.MM.yyyy")</td>
+                <td>@l.LessonNumber</td>
+                <td>@l.ClassName</td>
+                <td>@l.AcademicYear</td>
+                <td>@l.SubjectName</td>
+                <td>@(l.TeacherName ?? "—")</td>
+                <td>@l.Topic</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+@model ListViewModel<JournalRowViewModel>
+@{
+    ViewData["Title"] = "Журнал";
+}
+
+<h2>Журнал</h2>
+<p class="text-muted">Показано записей: @Model.Items.Count из @Model.TotalCount (сначала самые поздние уроки).</p>
+
+<table class="table table-striped table-hover table-sm">
+    <thead class="table-light">
+        <tr>
+            <th>Код</th>
+            <th>Учащийся</th>
+            <th>Класс</th>
+            <th>Дата урока</th>
+            <th>Предмет</th>
+            <th>Присутствие</th>
+            <th>Причина пропуска</th>
+            <th>Оценка</th>
+            <th>Вид работы</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var j in Model.Items)
+        {
+            <tr>
+                <td>@j.JournalID</td>
+                <td>@j.StudentName</td>
+                <td>@j.ClassName</td>
+                <td>@j.LessonDate.ToString("dd.MM.yyyy")</td>
+                <td>@j.SubjectName</td>
+                <td>@(j.IsPresent ? "Был" : "Пропустил")</td>
+                <td>@(j.AbsenceReason ?? "—")</td>
+                <td>@(j.GradeValue?.ToString() ?? "—")</td>
+                <td>@(j.WorkType ?? "—")</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+@model ListViewModel<SubjectRowViewModel>
+@{
+    ViewData["Title"] = "Предметы";
+}
+
+<h2>Учебные предметы</h2>
+<p class="text-muted">Показано записей: @Model.Items.Count из @Model.TotalCount (по алфавиту).</p>
+
+<table class="table table-striped table-hover table-sm">
+    <thead class="table-light">
+        <tr>
+            <th>Код</th>
+            <th>Название предмета</th>
+            <th>Форма контроля</th>
+            <th>Изучается в параллелях</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var s in Model.Items)
+        {
+            <tr>
+                <td>@s.SubjectID</td>
+                <td>@s.SubjectName</td>
+                <td>@s.ExamType</td>
+                <td>@s.GradesCount</td>
+            </tr>
+        }
+    </tbody>
+</table>

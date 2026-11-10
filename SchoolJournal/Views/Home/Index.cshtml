@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Главная";
+}
+
+<div class="p-4 mb-4 bg-light rounded-3">
+    <h1 class="display-6">Школьный журнал</h1>
+    <p class="lead mb-0">
+        Лабораторная работа №4: модели, контроллеры и представления ASP.NET Core MVC
+        с доступом к базе данных через Entity Framework Core.
+    </p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-3">
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Учителя</h5>
+            <p class="card-text">Кадровый состав, категории и нагрузка.</p>
+            <a class="btn btn-outline-primary" asp-controller="Teachers" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Предметы</h5>
+            <p class="card-text">Справочник учебных предметов и форм контроля.</p>
+            <a class="btn btn-outline-primary" asp-controller="Subjects" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Классы</h5>
+            <p class="card-text">Классы по учебным годам и классные руководители.</p>
+            <a class="btn btn-outline-primary" asp-controller="Classes" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Учащиеся</h5>
+            <p class="card-text">Список учащихся с указанием класса.</p>
+            <a class="btn btn-outline-primary" asp-controller="Students" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Уроки</h5>
+            <p class="card-text">Проведённые уроки: класс, предмет, учитель, тема.</p>
+            <a class="btn btn-outline-primary" asp-controller="Lessons" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+    <div class="col">
+        <div class="card h-100"><div class="card-body">
+            <h5 class="card-title">Журнал</h5>
+            <p class="card-text">Оценки и пропуски учащихся.</p>
+            <a class="btn btn-outline-primary" asp-controller="Journal" asp-action="Index">Открыть</a>
+        </div></div>
+    </div>
+</div>
